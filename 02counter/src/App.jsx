@@ -8,7 +8,7 @@ function App() {
   let [counter, setCounter] = useState(15)
 
   // let counter = 15;   
-  // Task: 
+  // Task: Restrict counter in between 0 and 20. logic implemented! 
  
   const addValue = () => {
     console.log("Clicked", counter);
