@@ -23,6 +23,8 @@ function App() {
   const removeValue = () => {
     if(counter>0)
       setCounter(counter-1)
+    
+    console.log("Removed Clicked", counter);
   }
 
 
