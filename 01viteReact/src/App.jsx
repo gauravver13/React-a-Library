@@ -6,12 +6,11 @@ function App() {
 
     return (
         <>
-         <h1>Chai or react with vite | Gaurav </h1>
+        <h1>Chai or react with vite | Gaurav </h1>
         <Coffee/>
          <h1>Chai or react {username}</h1>
          <p>Test para</p>            
          <p>//Error is: We can create only one element in return! but we can attach any of the number of element inside it. </p>
-
         </>
     )
 }

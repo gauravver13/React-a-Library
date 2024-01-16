@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
   let myObj = {
     username: "gaurav",
-    age:21
+    age: 21
   }
 
   let newArr = [1, 2, 3]
@@ -17,7 +17,7 @@ function App() {
     <>
 
     <h1 className='bg-green-500 text-black p-4 rounded-xl mb-4'>Tailwind Test</h1>
-    <Card username="Hello props" someObje={newArr} />
+    <Card username="Hello props" someObj={newArr} />
     <Card username="You are amazing props! " btnText="click me" />
     <Card username="Hooks and Props!" btnText= "visit me"/>
   
