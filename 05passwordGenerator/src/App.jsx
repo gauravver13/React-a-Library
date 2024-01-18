@@ -38,10 +38,12 @@ function App() {
     window.navigator.clipboard.writeText(password)
   }, [password])
 
+
   useEffect(() => {
     passwordGenerator()
 
   }, [length, numberAllowed, charAllowed, passwordGenerator])
+
 
   return (
   
@@ -59,10 +61,11 @@ function App() {
             <button 
             onClick={copyPasswordToClipboard}
             className='outline-none bg-blue-700 text-white
-            px-3 py-0.5 shrink-0'
+            px-3 py-0.5 shrink-0 hover:bg-fuchsia-950 '
             >copy</button>
 
-        </div>
+          </div>
+
         <div className='flex text-sm gap-x-2'>
           <div className='flex items-center gap-x-1'>
             <input 
@@ -74,8 +77,8 @@ function App() {
                 onChange={(e) => {setLength(e.target.value)}}
             />
             <label>Length: {length}</label>
-          </div>
-          <div className='flex items-center gap-x-1'>
+            </div>
+        <div className='flex items-center gap-x-1'>
             <input 
                 type="checkbox"
                 defaultChecked = {numberAllowed}
@@ -89,7 +92,7 @@ function App() {
           <div className='flex items-center gap-x-1'>
             <input 
                 type="checkbox"
-                defaultChecked = {numberAllowed}
+                defaultChecked = {charAllowed}
                 id = "characterInput"
                 onChange={() => {
                     setCharAllowed((prev) => 
