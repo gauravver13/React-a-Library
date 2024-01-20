@@ -17,20 +17,22 @@ export const todoSlice = createSlice({
                 id: nanoid(),
                 text: action.payload
             }
-            state.todos.push(todo)
+            state.todos.push(todo)          //declared above!
         },
         removeTodo: (state, action) => {
             state.todos = state.todos.filter((todo) => todo.
             id !== action.payload )
         }, 
         updateTodo: (state, action) => {
-            state.todos = state.todos.map((todo) => todo.id === id ? action.payload : todo ) 
+            const { id, payload } = action.payload;
+            state.todos = state.todos.map((todo) => todo.id === id ? payload : todo ) 
             // Update-Todo : Assignment Task!
             // state.todos.action.payload
         }           
+
     } 
 })
 
-export const {addTodo, removeTodo} = todoSlice.actions
+export const {addTodo, removeTodo, updateTodo} = todoSlice.actions
 
 export default todoSlice.reducer
