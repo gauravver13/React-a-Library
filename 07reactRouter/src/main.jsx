@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
 import Github from './components/Github/Github.jsx'
 
+// Above all can be exported by index file where each and every component is exported from their repective directories!
 
 const router = createBrowserRouter([
   {

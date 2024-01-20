@@ -12,7 +12,6 @@ function InputBox({
     amountDisabled = false,
     currencyDisabled = false,
     className = "",
-  
 }) {
     const amountInputId = useId()
   return (
@@ -53,5 +52,4 @@ function InputBox({
   );
 }
 
-export default InputBox;
-
+export default InputBox; 
