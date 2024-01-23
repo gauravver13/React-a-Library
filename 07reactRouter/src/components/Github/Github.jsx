@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function Github() {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch('https://api.github.com/users/gauravver13')
+        fetch('https://api.github.com/users/HiteshChoudhary')
         .then(response => response.json())
         .then(data => {
             console.log(data);

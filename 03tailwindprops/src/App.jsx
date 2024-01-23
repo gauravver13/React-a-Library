@@ -15,13 +15,10 @@ function App() {
 
   return (
     <>
-
     <h1 className='bg-green-500 text-black p-4 rounded-xl mb-4'>Tailwind Test</h1>
     <Card username="Hello props" someObj={newArr} />
     <Card username="You are amazing props! " btnText="click me" />
     <Card username="Hooks and Props!" btnText= "visit me"/>
-  
-
     </>
   )
 }
