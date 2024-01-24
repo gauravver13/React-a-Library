@@ -17,7 +17,7 @@ function App() {
 
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id) )
-  }
+  } 
 
   const toggleComplete = (id) => {
     // console.log(id);
@@ -35,9 +35,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
-  
-  
-
 
   return (
     <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}>
