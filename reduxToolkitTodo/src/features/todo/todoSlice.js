@@ -10,7 +10,7 @@ const initialState = {
 
 export const todoSlice = createSlice({
     name: 'todo',
-    initialState,           // declared-above!
+    initialState,                           // declared-above!
     reducers: {
         addTodo: (state, action) => {
             const todo = {
@@ -24,10 +24,10 @@ export const todoSlice = createSlice({
             id !== action.payload )
         }, 
         updateTodo: (state, action) => {
-            const { id, payload } = action.payload;
-            state.todos = state.todos.map((todo) => todo.id === id ? payload : todo ) 
+            state.todos = state.todos.map((todo) => todo.id === action.payload ? state.todos.push(todo) : todo ) 
             // Update-Todo : Assignment Task!
             // state.todos.action.payload
+            // id 
         }           
 
     } 
