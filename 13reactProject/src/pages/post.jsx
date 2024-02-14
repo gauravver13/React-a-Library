@@ -1,9 +1,9 @@
 import React from 'react'
 
-function post() {
+function Post() {
   return (
     <div>post</div>
   )
 }
 
-export default post
+export default Post
