@@ -80,7 +80,6 @@ export class Service{
         }
     }
 
-
     // Learn Pagination just after queries 
     // Queries:
     async getPosts(queries = [Query.equal("status", "active")]) {
@@ -118,7 +117,7 @@ export class Service{
             )
             return true;
         } catch (error) {
-            console.log("Appwrite service :: updatePost :: error", error);
+            console.log("Appwrite service :: deleteFile :: error", error);
             return false
         }
     }
@@ -127,7 +126,7 @@ export class Service{
         return this.bucket.getFilePreview(
             conf.appwriteBucketId,
             fileId
-        )
+        ).href 
     }
 }
 
