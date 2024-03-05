@@ -23,7 +23,6 @@ export class Service{
                 // attributes to take information,
                 {
                     title,
-                    slug,
                     content,
                     featuredImage,
                     status,
