@@ -42,8 +42,7 @@ function Signup() {
                 <Link
                     to="/login"
                     className='font-medium text-primary transition-all duration-200 hover:underline'
-                >
-                    Sign In 
+                >Sign In 
                 </Link>
             </p>
             {error && <p className="text-red-600 mt-8 text-center">{error}</p> }
@@ -63,7 +62,7 @@ function Signup() {
                     {...register("email", {
                         required: true,
                         validate: {
-                            matchPattern: (value) => /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(value) || "Email address must be a valid address"
+                            matchPattern: (value) => /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(value) || "Email address must be a valid address",
                         }
                     })}
                     />
