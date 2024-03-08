@@ -25,7 +25,7 @@ export class AuthService{
             throw error;
         }
     } 
-
+    
     async login({email, password}) {
         try {
             return await this.account.createEmailSession(email, password);
@@ -40,7 +40,6 @@ export class AuthService{
         } catch (error) {
             console.log("Appwrite Service :: getCurrentUser :: error", error);
         }
-
         return null;
     }
 
