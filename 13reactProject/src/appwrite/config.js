@@ -14,12 +14,14 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
+    // create likes and author with captions!
     async createPost({title, slug, content, featuredImage, status, userId}) {
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                slug,                //try slug
+                slug,                
+                //try slug,
                 // attributes to take information,
                 {
                     title,
