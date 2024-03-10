@@ -12,15 +12,33 @@ export default function RTE({name, control, label, defaultValue =""}) {
         control={control}
         render={({field: {onChange}}) => (
             <Editor
+            apiKey='cj0zzne4chj6vqzcf487sjwnjluh33h9rsmvxx2a8szqz75s'
             initialValue= {defaultValue}
             init={{
                 initialValue: defaultValue,
                 height: 500,
                 menubar: true,
                 plugins: [
-                    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                    'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                  "image",
+                  "advlist",
+                  "autolink",
+                  "lists",
+                  "link",
+                  "image",
+                  "charmap",
+                  "preview",
+                  "anchor",
+                  "searchreplace",
+                  "visualblocks",
+                  "code",
+                  "fullscreen",
+                  "insertdatetime",
+                  "media",
+                  "table",
+                  "code",
+                  "help",
+                  "wordcount",
+                  "anchor",
                 ],
                 toolbar:
                 'undo redo | blocks | ' +
