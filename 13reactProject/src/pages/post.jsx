@@ -39,7 +39,7 @@ export default function Post() {
                     <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl object-cover"
                     />
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
@@ -48,6 +48,7 @@ export default function Post() {
                                     Edit
                                 </Button>
                             </Link>
+
                             <Button bgColor="bg-red-500" onClick={deletePost}>
                                 Delete
                             </Button>
@@ -57,9 +58,10 @@ export default function Post() {
                 <div className="w-full mb-6">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
+
                 <div className="browser-css">
-                    {parse(post.content)}
-                    </div>
+                    {parse(String(post.content))}
+                </div>
             </Container>
         </div>
     ) : null;

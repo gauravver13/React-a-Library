@@ -1,9 +1,10 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { Button, Input, Select, RTE } from '../index'
 import appwriteService from '../../appwrite/config'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+
 
 export default function PostForm({ post }) {
     const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
@@ -26,7 +27,7 @@ export default function PostForm({ post }) {
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
             if(file) {
-                appwriteService.deleteFile(post.FeaturedImage)
+                appwriteService.deleteFile(post.featuredImage)
             }
 
             const dbPost = await appwriteService.updatePost(post.$id, {
@@ -34,17 +35,18 @@ export default function PostForm({ post }) {
                 featuredImage: file ? file.$id : undefined,
             })
             if(dbPost) {
-                setLoading(false)
-                navigate(`/post/${post.$id}`);
+                // setLoading(false)
+                navigate(`/post/${dbPost.$id}`);
             }
-        } else {
+        } 
+        else {
             const file = await appwriteService.uploadFile(data.image[0]);
 
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 try {
-                    const dbPost = await appwriteService.createPost({
+                    let dbPost = await appwriteService.createPost({
                         ...data,
                         userId: userData.$id
                     })
@@ -65,9 +67,9 @@ export default function PostForm({ post }) {
         if (value && typeof value === "string") 
             return value
             .trim()
-            .toLowerCase()
-            .replace(/^[a-zA-Z\d\s]+/g,'-')
-            .replace(/\s/g,'-')
+            .toLowerCase()      
+            .replace(/^[a-zA-Z\d\s]+/g,"-")
+            .replace(/\s/g,"-")
 
             return "";
     },[])
@@ -75,7 +77,7 @@ export default function PostForm({ post }) {
     useEffect(() => {
         const subscription = watch((value, {name}) => {
             if(name === "title") {
-                setValue("slug", slugTransform(value.title), {shouldValidate: true})
+                setValue("slug", slugTransform(value.title), { shouldValidate: true })
             }
         })
 
