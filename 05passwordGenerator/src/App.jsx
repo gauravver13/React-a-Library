@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect, useRef, useReducer } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 
 
 function App() {
@@ -46,14 +46,13 @@ function App() {
 
 
   return (
-  
-    <div>
-      <div className='w-full max-w-md mx-auto my-auto shadow-md rounded-lg px-4  py-4 text-orange-500 bg-gray-800'>
+    <div className='bg-gray-500'>
+      <div className='w-full max-w-md  mx-auto my-auto shadow-md rounded-lg px-4  py-4 text-orange-500 bg-gray-800'>
           <div className='flex shadow rounded-lg overflow-hidden mb-4'>
             <input 
             type="text" 
             value={password}
-            className='outline-none w-full py-1 px-3'
+            className='outline-none w-full py-1 px-3 bg-gray-300'
             placeholder="Password"
             readOnly 
             ref={passwordRef}
@@ -102,7 +101,6 @@ function App() {
               <label htmlFor="characterInput">Characters</label>
           </div>
         </div>
-
       </div>
     </div>
   )
